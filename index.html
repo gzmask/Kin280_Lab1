@@ -1,0 +1,57 @@
+<html>  
+<head>  
+	<!--[if IE]><script src="excanvas.js"></script><![endif]-->
+	<script type="text/javascript" src="game_engine.js"></script>
+</head>  
+<body style="background-color: #373021; background-image: url('LabTemplate.png'); background-repeat: no-repeat;">  
+	<div id="title_text" style="display: none; position: absolute; top: 25px; left: 35px; color: #FFF; font-size: 20px;">Lab 1 - Measures of Error</div>
+	<div id="content_text" style="display: none; background-color: #eee; position: absolute; top: 55px; left: 35px; color: #333; font-size: 12px; width: 720px; height: 423px; overflow:auto;">
+		Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vel magna. Nulla odio lorem, rhoncus nec, tincidunt rhoncus, interdum at, erat. In bibendum pede eu justo. Nunc tristique, diam non viverra vulputate, neque lectus sollicitudin enim, tempor fringilla orci pede a lacus. Etiam sed leo in sapien aliquam adipiscing. Sed ante. Vivamus at elit. Aenean vitae ipsum. Nam ut ipsum eget turpis dapibus tempus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Maecenas quis massa eu nunc ultrices laoreet. Sed mattis placerat justo. Etiam ut eros. Vestibulum eleifend vehicula sem.
+
+		Phasellus sit amet risus. Duis eget ligula. Vestibulum ullamcorper. Aliquam erat volutpat. Integer tempus, eros ac eleifend cursus, pede orci varius sapien, vel mattis libero mauris sit amet metus. Sed elementum mattis metus. Proin magna ipsum, hendrerit nec, laoreet eu, suscipit sagittis, pede. Nam tincidunt, orci a hendrerit tristique, nisi arcu dapibus enim, nec fringilla tellus augue eget felis. Phasellus condimentum congue neque. Morbi posuere vulputate enim. Suspendisse dui ante, auctor vulputate, ultricies et, tempor ut, magna. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Proin diam nulla, venenatis lobortis, placerat tristique, convallis nec, tellus. Mauris nunc. Quisque pulvinar tempor mi. Nulla nec augue. Duis velit ante, fermentum ac, consequat nec, facilisis id, elit. Pellentesque pretium, dolor a congue dignissim, magna nibh gravida lorem, in ultrices diam magna eget mauris.
+
+		Donec vel elit tristique tortor congue auctor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Phasellus quam ipsum, mattis in, pulvinar sagittis, tempor id, quam. Maecenas tempor placerat lectus. Integer purus. Cras ac quam. Pellentesque et lacus. Cras et nulla. Proin elit eros, adipiscing ac, placerat vitae, placerat eu, dolor. Donec quis dui. Donec tristique metus at mauris. Donec risus orci, fringilla pharetra, porttitor quis, gravida pharetra, odio. Donec cursus sodales libero. Sed lacinia sem et lectus. Mauris auctor, leo et consectetur cursus, nulla nisl sagittis urna, at semper odio purus non nunc. Aliquam luctus imperdiet arcu. Nunc ut justo mollis velit facilisis egestas. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+
+		Quisque porttitor interdum mi. Nam non velit non enim molestie condimentum. Nullam tempor. Duis facilisis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Aenean quis lacus. Nullam id turpis. Sed pharetra cursus diam. Vestibulum vitae odio ut ligula aliquet tristique. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Duis non tortor. Suspendisse metus. Nunc consectetur augue at ligula rutrum laoreet. Etiam vestibulum, lacus non blandit sollicitudin, massa libero volutpat orci, vitae ultrices dolor risus nec urna. Proin sit amet odio a pede tincidunt vehicula. Vivamus ante sem, condimentum eget, vehicula sed, egestas quis, eros.
+
+		Nulla rhoncus molestie nibh. Sed venenatis augue a ligula. Fusce in orci. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Proin ullamcorper. Mauris massa orci, pulvinar vel, feugiat in, consequat vel, ipsum. Nunc interdum tellus in nulla. Integer eu pede ac augue vehicula feugiat. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aliquam volutpat felis dapibus erat blandit vulputate. Cras est.
+	</div>
+	<a href="javascript: ;" id="next_bn" style="display: none; position: absolute; font-size: 14px; top: 538px; left: 35px; color: #FFF;">Next</a>
+	<div id="preview_text" style="display: none; font-size: 14px; position: absolute; color: #FFF; top: 135px; left: 75px;">Press the space key to stop the fast moving dot when it hits the center of the bar:</div>
+	<img id="preview_bar" src="bar_preview.png" style="display: none; position: absolute; top: 175px; left: 75px;" />
+	<form id="settings" style="display: none; position: absolute; top: 225px; left: 75px;">
+		<span style="font-size: 14px; color: #FFF;">Number of Trials:</span>
+		<select id="number_of_trials" >
+			<option value="10" selected="selected">10</option>
+			<option value="20">20</option>
+			<option value="30">30</option>
+			<option value="40">40</option>
+			<option value="50">50</option>
+		</select><br /><br />
+		<span id="start_note" style="color: #8bab6f; position: absolute; top: 250px; left: -40px;">Please notice that there is a random factor in the movement of the dot</span>
+	</form>
+	<span id="absolute_error" style="display: none; color: #fff; position: absolute; top: 217px; left: 79px;">Absolute Error :</span>
+	<span id="constant_error" style="display: none; color: #fff; position: absolute; top: 247px; left: 79px;">Constant Error :</span>
+	<span id="variable_error" style="display: none; color: #fff; position: absolute; top: 277px; left: 79px;">Variable Error :</span>
+	<div id="statistic" style="display: none; color: #fff; position: absolute; top: 0px; left: 29px;">
+		<span id="ae_list"></span><br />	
+		<span id="ce_list"></span><br />	
+		<span id="ve_result"></span><br />	
+		<table id="stat_table"  border=1 style="border-style: none; border-collapse: collapse; color: white; background-color: transparent;">
+			<tr>
+				<th>Results:</th><!--th>X</th><th>Criterion</th><th>|X-Criterion|</th><th>(X-Criterion)</th><th>Square of Error</th-->
+			</tr>
+		</table><br />
+		<!--span>Calculates:</span><br />
+		<table border=1 style="background-color: white;">
+			<tr><th>Absolute Error = &nbsp;&nbsp;&nbsp;</td><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th></tr>
+			<tr><th>Constant Error = &nbsp;&nbsp;&nbsp;</td><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th></tr>
+			<tr><th>Variable Error = &nbsp;&nbsp;&nbsp;</td><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th></tr>
+		</table-->
+	</div>
+	<canvas id="canvas" width="720" height="520">
+		This web page only supports Firefox3, Chrome, Safari, Internet Explorer 7 & 8.
+	</canvas>  
+</body>  
+</html>  
+
