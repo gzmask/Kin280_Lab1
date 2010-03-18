@@ -188,6 +188,9 @@ function dotStart(e) {
 	if (!e) e = window.event;
 	if (trial_num != 0 && e.keyCode == 32) {
 		scene3 = true;
+		dotSpeed = 0;
+		setTimeout(function(){dotSpeed = popSpeed}, 3000);
+		dotPos = startPos;
 		document.getElementById("variable_error").innerHTML = "<span style=\"color: red;\">Test No." + (Number(document.getElementById("number_of_trials").value) + 1 - Number(trial_num)) + " Press space to stop the dot at the center...</span>";  
 		document.onkeydown = dotStop;
 	}
