@@ -240,7 +240,7 @@ function animateScene3() {
 		dotSpeed = 0;
 		dotPos =  startPos;
 		var ranNum = Math.floor(Math.random()*101*randomFactor)
-		setTimeout(randomStart, ranNum);
+		setTimeout(randomStart, 3000+ranNum);
 	} else if (dotPos < startPos) {
 		dotPos = startPos;
 	}
