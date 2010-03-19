@@ -15,7 +15,7 @@ var dotHitImg = new Image();
 dotHitImg.src = 'dot_hit.png';
 
 //gobal variables 
-var FPS = 60;
+var FPS = 30;
 var SecondsBetweenFrames = 1/FPS;
 var dotSpeed =24; //pixel per frame, on slow machine this can be as big as 8
 var startPos = 77;  
@@ -25,7 +25,7 @@ if (browser == "Microsoft Internet Explorer" ) {
 	startPos -= 13;
 	midPos -= 23;
 	endPos -= 50;
-	FPS = 59;
+	FPS = 29;
 	SecondsBetweenFrames = 1/FPS;
 	dotSpeed =36;
 }
