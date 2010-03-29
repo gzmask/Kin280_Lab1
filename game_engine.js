@@ -18,16 +18,16 @@ dotHitImg.src = 'dot_hit.png';
 var FPS = 40;
 var SecondsBetweenFrames = 1/FPS;
 var dotSpeed =24; //pixel per frame, on slow machine this can be as big as 8
-var startPos = 77;  
-var midPos = 341;
-var endPos = 598;
+var startPos =12;  
+var midPos = 396;
+var endPos = 770;
 if (browser == "Microsoft Internet Explorer" ) {
-	startPos -= 13;
-	midPos -= 23;
-	endPos -= 50;
-	FPS = 39;
+	startPos -= 12;
+	midPos -= 36;
+	endPos -= 72;
+	FPS = 50;
 	SecondsBetweenFrames = 1/FPS;
-	dotSpeed =36;
+	dotSpeed =24;
 }
 var dotPos = startPos;
 var trial_num;
@@ -80,18 +80,21 @@ function drawScene4() {
 
 
 	document.getElementById("statistic").style.display = "block";
+	document.getElementById("ss-form").style.visibility = "visible";
 	//document.getElementById("ae_list").innerHTML = "Your absolute error is: " + avgAe.toFixed(1) + "%.";
 	//document.getElementById("ce_list").innerHTML = "Your constant error is: " + avgCe.toFixed(1) + "%.";
 	//document.getElementById("ve_result").innerHTML = "Your variable error is: " + ve.toFixed(1) + "%.";
 	document.getElementById("next_bn").style.display = "inline";
 	document.getElementById("next_bn").innerHTML = "Start another trial";
+	var result_input = document.getElementById("entry_1");
 	var tbl = document.getElementById("stat_table");
 	var newRow = tbl.insertRow(tbl.rows.length);
 
 	aeList = aeList.reverse();
 	ceList = ceList.reverse();
-	//var count = aeList.length;
+	var count = aeList.length;
 
+	result_input.value += "Trial " + String(setCount) + ": {";
 	for ( var i in aeList ) {
 		//var newRow = tbl.insertRow(tbl.rows.length);
 		/*var newCell = newRow.insertCell(0);
@@ -104,15 +107,18 @@ function drawScene4() {
 		//newCell.innerHTML = "0";
 
 		var newCell = newRow.insertCell(0);
-		newCell.innerHTML = ceList[i];
+		//newCell.innerHTML = "[" + String(count) + "]" + String(ceList[i]);
+		newCell.innerHTML = String(ceList[i]);
+		result_input.value += String(ceList[i]) + ", ";
 		if (ceList[i] == 0) {
 			newCell.style.backgroundColor = "#e81c1c";
 		}
 		//var newCell = newRow.insertCell(0);
 		//newCell.innerHTML = "T" + String(Number(count));
-		//count--;
+		count--;
 	}
 
+	result_input.value += "};";
 	var leadCell = newRow.insertCell(0);
 	leadCell.innerHTML = "Set " + setCount;
 	setCount++;
@@ -151,6 +157,7 @@ function end_scene4(evt) {
 	aeList = [];
 	ceList = [];
 	document.getElementById("statistic").style.display = "none";
+	document.getElementById("ss-form").style.visibility = "hidden";
 	scene4 = false;
 	//location.reload(false);
 	dotPos = startPos;
@@ -260,10 +267,10 @@ function drawScene3() {
 		var ctx = canvas.getContext("2d");  
 		ctx.clearRect(0, 0, canvas.width, canvas.height);
 		if (dotPos == midPos) {
-			ctx.drawImage(barHitImg, 67, 171);
+			ctx.drawImage(barHitImg, 5, 171);
 			ctx.drawImage(dotHitImg, dotPos, 171);
 		} else {
-			ctx.drawImage(barImg, 67, 171);
+			ctx.drawImage(barImg, 5, 171);
 			ctx.drawImage(dotImg, dotPos, 171);
 		}
 	}

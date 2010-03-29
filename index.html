@@ -2,6 +2,7 @@
 <head>  
 	<!--[if IE]><script src="excanvas.js"></script><![endif]-->
 	<script type="text/javascript" src="game_engine.js"></script>
+	<title>Lab 1 - Measures of Error</title> 
 </head>  
 <body style="background-color: #373021; background-image: url('LabTemplate.png'); background-repeat: no-repeat;">  
 	<div id="title_text" style="display: none; position: absolute; top: 25px; left: 35px; color: #FFF; font-size: 20px;">Lab 1 - Measures of Error</div>
@@ -49,7 +50,15 @@
 			<tr><th>Variable Error = &nbsp;&nbsp;&nbsp;</td><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th></tr>
 		</table-->
 	</div>
-	<canvas id="canvas" width="720" height="520">
+	<form style="visibility: hidden; position: absolute; top: 338px; left: 35px;" action="http://spreadsheets.google.com/formResponse?formkey=dDZWR3JhYl9wSndvZmttOUFueVVSQUE6MA&amp;ifq" method="POST" id="ss-form"> 
+		<textarea style="visibility: hidden;" name="entry.1.single" rows="8" cols="75" class="ss-q-long" id="entry_1"></textarea>		
+		<input type="hidden" name="pageNumber" value="0"> 
+		<input type="hidden" name="backupCache" value=""><br /> 
+		<span style="color: white;">Your Name: </span><input type="text" name="entry.0.single" value="" class="ss-q-short" id="entry_0"><br />
+		<input type="submit" name="submit" value="Save and quit">
+	</form> 
+
+	<canvas id="canvas" width="920" height="520">
 		This web page only supports Firefox3, Chrome, Safari, Internet Explorer 7 & 8.
 	</canvas>  
 </body>  
