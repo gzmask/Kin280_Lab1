@@ -47,7 +47,16 @@ var scene4 = false;
 window.onload = init;
 
 function init() {  
-	drawScene1();
+	var nextBn = document.getElementById("next_bn");
+	var titleText = document.getElementById("title_text");
+	var contentText = document.getElementById("content_text");
+	contentText.style.display = "none";
+	contentText.style.backgroundColor = "transparent";
+ 	nextBn.style.display = "inline";
+	titleText.style.display = "block";
+	scene1 = false;
+	scene2 = true;
+	drawScene2();
 	setInterval(update, SecondsBetweenFrames*1000);
 }  
 
@@ -80,7 +89,9 @@ function drawScene4() {
 
 
 	document.getElementById("statistic").style.display = "block";
-	document.getElementById("ss-form").style.visibility = "visible";
+	if (setCount > 1) {
+		document.getElementById("ss-form").style.visibility = "visible";
+	}
 	//document.getElementById("ae_list").innerHTML = "Your absolute error is: " + avgAe.toFixed(1) + "%.";
 	//document.getElementById("ce_list").innerHTML = "Your constant error is: " + avgCe.toFixed(1) + "%.";
 	//document.getElementById("ve_result").innerHTML = "Your variable error is: " + ve.toFixed(1) + "%.";
@@ -180,7 +191,7 @@ function dotStop(e) {
 		var ve = document.getElementById("variable_error");  
 		trial_num -= 1;
 		ve.style.display = "inline";
-		ve.innerHTML = "<span style=\"color:#00ff00;\">" + trial_num + " tests remained, hit space again to start next test.</span>";
+		ve.innerHTML = "<span style=\"color:#00ff00;\">" + trial_num + " tests remain, hit space again to start next test.</span>";
 		document.onkeydown = dotStart;
 	}
 
@@ -267,10 +278,10 @@ function drawScene3() {
 		var ctx = canvas.getContext("2d");  
 		ctx.clearRect(0, 0, canvas.width, canvas.height);
 		if (dotPos == midPos) {
-			ctx.drawImage(barHitImg, 5, 171);
+			ctx.drawImage(barHitImg, 5, 151);
 			ctx.drawImage(dotHitImg, dotPos, 171);
 		} else {
-			ctx.drawImage(barImg, 5, 171);
+			ctx.drawImage(barImg, 5, 151);
 			ctx.drawImage(dotImg, dotPos, 171);
 		}
 	}
@@ -310,7 +321,7 @@ function end_scene2(evt) {
 		nextBn.detachEvent('onclick', end_scene2);
 	}
 	document.getElementById("variable_error").style.display = "inline";
-	document.getElementById("variable_error").innerHTML = "Plase be prepared and press space to start the test.";  
+	document.getElementById("variable_error").innerHTML = "Please be prepared and press space to start the test.";  
 	preText.style.display = "none";
 	preBar.style.display = "none";
 	settings.style.display = "none";
