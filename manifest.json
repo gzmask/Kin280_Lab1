@@ -1,0 +1,17 @@
+{
+  "name": "Measure of Error",
+  "description": "measures your timing errors",
+  "version": "1.0.0.0",
+  "icons": {
+    "128": "icon_128.png"
+  },
+  "app": {
+    "urls": [
+      "http://www.lancewave.com/moe_app/"
+    ],
+    "launch": {
+      "web_url": "http://www.lancewave.com/moe_app/"
+    }
+  }
+}
+
