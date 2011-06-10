@@ -2,10 +2,10 @@
 <head>  
 	<!--[if IE]><script src="excanvas.js"></script><![endif]-->
 	<script type="text/javascript" src="game_engine.js"></script>
-	<title>Lab 1 - Measures of Error</title> 
+	<title>Measures of Error</title> 
 </head>  
 <body style="background-color: #373021; background-image: url('LabTemplate.png'); background-repeat: no-repeat;">  
-	<div id="title_text" style="display: none; position: absolute; top: 25px; left: 35px; color: #FFF; font-size: 20px;">Lab 1 - Measures of Error</div>
+	<div id="title_text" style="display: none; position: absolute; top: 25px; left: 35px; color: #FFF; font-size: 20px;">Measures of Error</div>
 	<div id="content_text" style="display: none; background-color: #eee; position: absolute; top: 55px; left: 35px; color: #333; font-size: 12px; width: 720px; height: 423px; overflow:auto;"></div>
 	<a href="javascript: ;" id="next_bn" style="display: none; position: absolute; font-size: 14px; top: 538px; left: 35px; color: #FFF;">Next</a>
 	<div id="preview_text" style="display: none; font-size: 14px; position: absolute; color: #FFF; top: 135px; left: 75px;">Press the space key to stop the fast moving dot when it hits the center of the bar:</div>
@@ -13,16 +13,20 @@
 	<form id="settings" style="display: none; position: absolute; top: 225px; left: 75px;">
 		<span style="font-size: 14px; color: #FFF;">Number of Trials:</span>
 		<select id="number_of_trials" >
+			<option value="2">2</option>
+			<option value="5">5</option>
 			<option value="10" selected="selected">10</option>
+			<option value="30">30</option>
 		</select><br /><br />
 		<span id="start_note" style="color: #8bab6f; position: absolute; top: 250px; left: -40px;">Please notice that there is a random factor in the movement of the dot</span>
 	</form>
 	<span id="absolute_error" style="display: none; color: #fff; position: absolute; top: 217px; left: 79px;">Absolute Error :</span>
 	<span id="constant_error" style="display: none; color: #fff; position: absolute; top: 247px; left: 79px;">Constant Error :</span>
 	<span id="variable_error" style="display: none; color: #fff; position: absolute; top: 277px; left: 79px;">Variable Error :</span>
-	<div id="statistic" style="display: none; color: #fff; position: absolute; top: 0px; left: 29px;">
-		<span id="ae_list"></span><br />	
-		<span id="ce_list"></span><br />	
+	<div id="statistic" style="display: none; color: #fff; position: absolute; top: 60px; left: 29px;">
+		For this trial: 
+		<span id="ae_list"></span>
+		<span id="ce_list"></span>
 		<span id="ve_result"></span><br />	
 		<table id="stat_table"  border=1 style="border-style: none; border-collapse: collapse; color: white; background-color: transparent;">
 			<tr>
@@ -36,15 +40,8 @@
 			<tr><th>Variable Error = &nbsp;&nbsp;&nbsp;</td><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th></tr>
 		</table-->
 	</div>
-	<form style="visibility: hidden; position: absolute; top: 238px; left: 35px;" action="https://spreadsheets1.google.com/spreadsheet/formResponse?hl=en&amp;formkey=dDZWR3JhYl9wSndvZmttOUFueVVSQUE6MA&amp;ifq" method="POST" id="ss-form" target="_blank"> 
-
+	<form style="visibility: hidden; position: absolute; top: 238px; left: 35px;" id="ss-form"> 
 		<textarea style="visibility: hidden;" name="entry.1.single" rows="8" cols="75" class="ss-q-long" id="entry_1"></textarea>		
-		<input type="hidden" name="pageNumber" value="0"> 
-		<input type="hidden" name="backupCache" value=""><br /> 
-		<span style="color: white;">Require tests are finish!<br />Please save your results by writing them down or click the following button:<br /> 
-		Your Name: </span><input type="text" name="entry.0.single" value="" class="ss-q-short" id="entry_0"><br />
-		<input type="submit" name="submit" value="Save results"><br /><br />
-		<span style="color: white;">You can see all the results at: <a href="http://spreadsheets.google.com/pub?key=t6VGrab_pJwofkm9AnyURAA&output=html" target="_blank">Google Form</a></span>
 	</form> 
 
 	<canvas id="canvas" width="920" height="520">

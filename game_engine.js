@@ -89,12 +89,12 @@ function drawScene4() {
 
 
 	document.getElementById("statistic").style.display = "block";
-	if (setCount > 1) {
+	/*if (setCount > 1) {
 		document.getElementById("ss-form").style.visibility = "visible";
-	}
-	//document.getElementById("ae_list").innerHTML = "Your absolute error is: " + avgAe.toFixed(1) + "%.";
-	//document.getElementById("ce_list").innerHTML = "Your constant error is: " + avgCe.toFixed(1) + "%.";
-	//document.getElementById("ve_result").innerHTML = "Your variable error is: " + ve.toFixed(1) + "%.";
+	}*/
+	document.getElementById("ae_list").innerHTML = "Your absolute error is: " + avgAe.toFixed(1) + "%.";
+	document.getElementById("ce_list").innerHTML = "Your constant error is: " + avgCe.toFixed(1) + "%.";
+	document.getElementById("ve_result").innerHTML = "Your variable error is: " + ve.toFixed(1) + "%.";
 	document.getElementById("next_bn").style.display = "inline";
 	document.getElementById("next_bn").innerHTML = "Start another trial";
 	var result_input = document.getElementById("entry_1");
@@ -168,7 +168,7 @@ function end_scene4(evt) {
 	aeList = [];
 	ceList = [];
 	document.getElementById("statistic").style.display = "none";
-	document.getElementById("ss-form").style.visibility = "hidden";
+	//document.getElementById("ss-form").style.visibility = "hidden";
 	scene4 = false;
 	//location.reload(false);
 	dotPos = startPos;
